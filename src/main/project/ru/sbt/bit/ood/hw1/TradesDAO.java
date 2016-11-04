@@ -1,6 +1,7 @@
 package ru.sbt.bit.ood.hw1;
 
 import java.util.Collection;
+import java.util.List;
 
 public class TradesDAO {
 
@@ -15,5 +16,11 @@ public class TradesDAO {
 
     public void save(Trade trade) {
         // save Trade in database
+    }
+    public void updateTrades(List<Trade> listoftrades) {
+        deleteAll();
+        for (Trade trade : listoftrades) {
+            save(trade);
+        }
     }
 }
